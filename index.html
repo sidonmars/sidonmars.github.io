@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="color-scheme" content="light dark">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Siddharth Tourani</title>
+<meta name="description" content="Siddharth Tourani, computer vision researcher working on matching, unsupervised landmark discovery and 3D scene understanding.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,700&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,600;1,6..72,400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #FFFFFF;
+    --ink: #14213D;
+    --soft: #56627A;
+    --line: #E3E7EC;
+    --link: #0E7C7B;
+    --display: "Bricolage Grotesque", "Avenir Next", "Segoe UI", sans-serif;
+    --text: "Newsreader", "Iowan Old Style", Georgia, serif;
+  }
+  :root[data-theme="dark"] {
+    --bg: #10182A;
+    --ink: #E8EDF3;
+    --soft: #A3AFC2;
+    --line: #2A3650;
+    --link: #5CCBC6;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: var(--text);
+    font-size: 1.125rem;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+  .wrap { max-width: 44rem; margin: 0 auto; padding: 5rem 1.5rem 4rem; }
+  a { color: inherit; text-decoration-color: var(--link); text-decoration-thickness: 1.5px; text-underline-offset: 3px; }
+  a:hover { color: var(--link); }
+  a:focus-visible { outline: 2px solid var(--link); outline-offset: 3px; border-radius: 2px; }
+
+  .theme {
+    position: absolute; top: 1.25rem; right: 1.5rem;
+    font: 600 0.9375rem var(--display);
+    color: var(--ink); background: transparent;
+    border: 1px solid var(--line); border-radius: 999px;
+    padding: 0.35rem 0.9rem; cursor: pointer;
+  }
+  .theme:hover { border-color: var(--ink); }
+  .theme:focus-visible { outline: 2px solid var(--link); outline-offset: 3px; }
+
+  h1 { font-family: var(--display); font-weight: 700; font-size: clamp(2.25rem, 6vw, 3rem); line-height: 1.05; letter-spacing: -0.025em; margin: 0 0 1.25rem; }
+  .claim { font-size: 1.3125rem; line-height: 1.45; margin: 0 0 0.75rem; }
+  .about { color: var(--soft); margin: 0 0 0.75rem; }
+  .links { display: flex; flex-wrap: wrap; gap: 0.5rem 1.5rem; font-family: var(--display); font-weight: 600; font-size: 1rem; margin: 1.5rem 0 0; padding: 0; list-style: none; }
+
+  h2 { font-family: var(--display); font-weight: 600; font-size: 1.5rem; letter-spacing: -0.01em; margin: 4rem 0 1.5rem; }
+
+  .papers { list-style: none; margin: 0; padding: 0; }
+  .paper { padding: 1.15rem 0; border-top: 1px solid var(--line); }
+  .paper:first-child { border-top: 0; padding-top: 0; }
+  .paper h3 { font-family: var(--display); font-weight: 600; font-size: 1.125rem; line-height: 1.3; margin: 0 0 0.25rem; }
+  .paper h3 a { text-decoration: none; }
+  .paper h3 a:hover { text-decoration: underline; text-decoration-color: var(--link); }
+  .paper p { margin: 0; font-size: 1rem; line-height: 1.45; color: var(--soft); }
+  .paper .authors b { color: var(--ink); font-weight: 600; }
+  .paper .venue { margin-top: 0.2rem; font-style: italic; color: var(--ink); }
+  .paper .venue a { font-style: normal; font-family: var(--display); font-size: 0.875rem; font-weight: 600; margin-left: 0.6rem; }
+
+  footer { margin-top: 4rem; font-size: 0.9375rem; color: var(--soft); }
+</style>
+<script>
+  /* Apply a saved theme before the page paints. White is the default. */
+  try { if (localStorage.getItem("theme") === "dark") document.documentElement.setAttribute("data-theme", "dark"); } catch (e) {}
+</script>
+</head>
+<body>
+<button class="theme" id="theme" type="button">Dark mode</button>
+<div class="wrap">
+  <header>
+    <h1>Siddharth Tourani</h1>
+    <p class="claim">I study how machines find the same thing twice: matching points, segments and landmarks across images, mostly without labels.</p>
+    <!-- EDIT: confirm your current position. This line is based on older sources. -->
+    <p class="about">Computer vision researcher. PhD work at the Computer Vision and Learning Lab, Heidelberg University, with research carried out at MBZUAI and the Robotics Research Center, IIIT Hyderabad.</p>
+    <p class="about">I have had the good fortune of working with many people, including <a href="https://hci.iwr.uni-heidelberg.de/vislearn/people/carsten-rother/">Carsten Rother</a>, <a href="https://hci.iwr.uni-heidelberg.de/vislearn/people/bogdan/">Bogdan Savchynskyy</a>, <a href="https://madhavak-iiith.github.io">K Madhava Krishna</a>, <a href="https://robotics.iiit.ac.in/faculty_sgarg">Sourav Garg</a>, <a href="https://3dcomputervision.github.io/about">Avinash Sharma</a> and <a href="https://mbzuai.ac.ae/study/faculty/muhammad-haris-khan/">Muhammad Haris Khan</a>.</p>
+    <ul class="links">
+      <li><a href="https://openreview.net/profile?id=~Siddharth_Tourani1">OpenReview</a></li>
+      <li><a href="https://dblp.org/pid/162/6194">DBLP</a></li>
+      <!-- EDIT: add your own links, for example:
+      <li><a href="https://scholar.google.com/citations?user=YOUR_ID">Google Scholar</a></li>
+      <li><a href="https://github.com/YOUR_USERNAME">GitHub</a></li>
+      <li><a href="mailto:you@example.com">Email</a></li>
+      -->
+    </ul>
+  </header>
+
+  <main>
+    <h2>Papers</h2>
+    <ol class="papers" id="list"></ol>
+  </main>
+
+  <footer>Siddharth Tourani</footer>
+</div>
+
+<script>
+/* PAPERS, newest first. To add one, copy an entry and edit it. */
+var ME = "Siddharth Tourani";
+var PAPERS = [
+  { y: 2026, t: "CrossWeave: Cross-Modal Scene and Instance Retrieval from Sparse 2D-3D Alignment", a: "Aadith Warrier, Gnana Prakash Punnavajhala, Siddharth Tourani, Muhammad Haris Khan, Avinash Sharma, Madhava Krishna", v: "NeurIPS 2026", u: "https://openreview.net/forum?id=Qakxj8c6lU" },
+  { y: 2026, t: "MASt3R-Nav: WayPixel Navigation in Relative 3D Maps", a: "Vansh Garg, Rohit Jayanti, Krish Pandya, Sarthak Chittawar, Siddharth Tourani, Muhammad Haris Khan, Sourav Garg, Madhava Krishna", v: "ICRA 2026", u: "https://openreview.net/forum?id=HXqYzcYBlT", x: "https://arxiv.org/abs/2605.24111" },
+  { y: 2025, t: "SegMASt3R: Geometry Grounded Segment Matching", a: "Rohit Jayanti, Swayam Agrawal, Vansh Garg, Siddharth Tourani, Muhammad Haris Khan, Sourav Garg, Madhava Krishna", v: "NeurIPS 2025, spotlight", u: "https://openreview.net/forum?id=DI2AAFnLrc" },
+  { y: 2025, t: "Leveraging 2D Priors and SDF Guidance for Dynamic Urban Scene Rendering", a: "Siddharth Tourani, Jayaram Reddy, Akash Kumbar, Satyajit Tourani, Nishant Goyal, Madhava Krishna, N Dinesh Reddy, Muhammad Haris Khan", v: "ICCV 2025", u: "https://doi.org/10.1109/ICCV51701.2025.02698", x: "https://arxiv.org/abs/2510.13381" },
+  { y: 2025, t: "Unsupervised Discovery of Facial Landmarks and Head Pose", a: "Satyajit Tourani, Siddharth Tourani, Arif Mahmood, Muhammad Haris Khan", v: "CVPR 2025", u: "https://doi.org/10.1109/CVPR52734.2025.01974" },
+  { y: 2024, t: "Leveraging Cycle-Consistent Anchor Points for Self-Supervised RGB-D Registration", a: "Siddharth Tourani, Jayaram Reddy, Sarvesh Thakur, K. Madhava Krishna, Muhammad Haris Khan, N Dinesh Reddy", v: "ICRA 2024", u: "https://doi.org/10.1109/ICRA57147.2024.10610738" },
+  { y: 2024, t: "Pose-Guided Self-Training with Two-Stage Clustering for Unsupervised Landmark Discovery", a: "Siddharth Tourani, Ahmed Sultan Alwheibi, Arif Mahmood, Muhammad Haris Khan", v: "CVPR 2024", u: "https://doi.org/10.1109/CVPR52733.2024.02174", x: "https://arxiv.org/abs/2403.16194" },
+  { y: 2024, t: "Discrete Cycle-Consistency Based Unsupervised Deep Graph Matching", a: "Siddharth Tourani, Muhammad Haris Khan, Carsten Rother, Bogdan Savchynskyy", v: "AAAI 2024", u: "https://doi.org/10.1609/aaai.v38i6.28332", x: "https://arxiv.org/abs/2307.08930" },
+  { y: 2022, t: "Fast DNA-PAINT Imaging Using a Deep Neural Network", a: "Kaarjel K. Narayanasamy, Johanna V. Rahm, Siddharth Tourani, Mike Heilemann", v: "Nature Communications, 2022", u: "https://doi.org/10.1038/s41467-022-32626-0" },
+  { y: 2020, t: "Taxonomy of Dual Block-Coordinate Ascent Methods for Discrete Energy Minimization", a: "Siddharth Tourani, Alexander Shekhovtsov, Carsten Rother, Bogdan Savchynskyy", v: "AISTATS 2020", u: "http://proceedings.mlr.press/v108/tourani20a.html", x: "https://arxiv.org/abs/2004.07715" },
+  { y: 2018, t: "MPLP++: Fast, Parallel Dual Block-Coordinate Ascent for Dense Graphical Models", a: "Siddharth Tourani, Alexander Shekhovtsov, Carsten Rother, Bogdan Savchynskyy", v: "ECCV 2018", u: "https://doi.org/10.1007/978-3-030-01225-0_16", x: "https://arxiv.org/abs/2004.08227" },
+  { y: 2016, t: "Using In-frame Shear Constraints for Monocular Motion Segmentation of Rigid Bodies", a: "Siddharth Tourani, K. Madhava Krishna", v: "Journal of Intelligent and Robotic Systems, 2016", u: "https://doi.org/10.1007/s10846-015-0195-1" },
+  { y: 2016, t: "Rolling Shutter and Motion Blur Removal for Depth Cameras", a: "Siddharth Tourani, Sudhanshu Mittal, Akhil Nagariya, Visesh Chari, K. Madhava Krishna", v: "ICRA 2016", u: "https://doi.org/10.1109/ICRA.2016.7487715" },
+  { y: 2016, t: "SLAM Pose-Graph Robustification via Multi-Scale Heat-Kernel Analysis", a: "Sayantan Datta, Siddharth Tourani, Avinash Sharma, K. Madhava Krishna", v: "CDC 2016", u: "https://doi.org/10.1109/CDC.2016.7798703" },
+  { y: 2014, t: "Monocular Motion Segmentation of Rigid Bodies Using In-Frame Shear Constraints", a: "Siddharth Tourani, K. Madhava Krishna", v: "ICVGIP 2014", u: "https://doi.org/10.1145/2683483.2683508" },
+  { y: 2014, t: "Linear-Chain CRF Based Intersection Recognition", a: "Siddharth Tourani, Falak Chhaya, K. Madhava Krishna", v: "ICVES 2014", u: "https://doi.org/10.1109/ICVES.2014.7063732" },
+  { y: 2012, t: "Outdoor Intersection Detection for Autonomous Exploration", a: "Piyoosh Mukhija, Siddharth Tourani, K. Madhava Krishna", v: "ITSC 2012", u: "https://doi.org/10.1109/ITSC.2012.6338647" }
+];
+
+
+(function () {
+  var root = document.documentElement, btn = document.getElementById("theme");
+  function label() { btn.textContent = root.getAttribute("data-theme") === "dark" ? "Light mode" : "Dark mode"; }
+  btn.addEventListener("click", function () {
+    var dark = root.getAttribute("data-theme") !== "dark";
+    if (dark) root.setAttribute("data-theme", "dark"); else root.removeAttribute("data-theme");
+    try { localStorage.setItem("theme", dark ? "dark" : "light"); } catch (e) {}
+    label();
+  });
+  label();
+})();
+
+(function () {
+  function el(tag, attrs, text) {
+    var n = document.createElement(tag);
+    for (var k in attrs || {}) n.setAttribute(k, attrs[k]);
+    if (text != null) n.textContent = text;
+    return n;
+  }
+  var list = document.getElementById("list");
+  PAPERS.forEach(function (p) {
+    var li = el("li", { "class": "paper" });
+    var h = el("h3");
+    h.appendChild(el("a", { href: p.u }, p.t));
+    li.appendChild(h);
+    var au = el("p", { "class": "authors" });
+    p.a.split(", ").forEach(function (name, i, all) {
+      au.appendChild(name === ME ? el("b", {}, name) : document.createTextNode(name));
+      if (i < all.length - 1) au.appendChild(document.createTextNode(", "));
+    });
+    li.appendChild(au);
+    var v = el("p", { "class": "venue" }, p.v);
+    if (p.x) v.appendChild(el("a", { href: p.x }, "arXiv"));
+    li.appendChild(v);
+    list.appendChild(li);
+  });
+})();
+</script>
+</body>
+</html>
